@@ -1,20 +1,37 @@
+import { useState } from "react";
 import "./App.css";
 import Button from "./Button";
+import Routing from "./Pages/Routing";
 
 function App() {
-  const handleClick = (data) => {
-    alert(data);
-  };
+  // const handleClick = (data) => {
+  //   alert(data);
+  // };
+
+  // const [state, setState] = useState(0);
+
+  // const handleLike = () => {
+  //   setState(state + 1)
+  // }
+
+  // const handleDisLike = () => {
+  //   setState(state - 1)
+  // }
 
   return (
     <div className="App">
+      <Routing />
 
-      <Button handleClick={handleClick} btnName={"All"} value={50} />
+      {/* <h1>{state}</h1>
+
+      <button onClick={handleLike}>👍 Like</button>
+      <button onClick={handleDisLike}>👎 DisLike</button> */}
+
+      {/* <Button handleClick={handleClick} btnName={"All"} value={50} />
       <Button handleClick={handleClick} btnName={"Movies"} value={100} />
       <Button handleClick={handleClick} btnName={"Cars"} value={2} />
       <Button handleClick={handleClick} btnName={"Bikes"} value={1000} />
-      <Button handleClick={handleClick} btnName={"Classes"} value={666} />
-      
+      <Button handleClick={handleClick} btnName={"Classes"} value={666} /> */}
 
       {/* <h1>Hello World</h1> */}
       {/* <Button itemName={"All"} btnColor={"red"} />
@@ -30,3 +47,5 @@ function App() {
 }
 
 export default App;
+
+// Hooks ----> useState, useReducer, useEffect
