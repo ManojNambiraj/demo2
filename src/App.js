@@ -1,7 +1,8 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
-import Button from "./Button";
-import Routing from "./Pages/Routing";
+import ShoppingCart from "./Pages/ShoppingCart";
+// import Button from "./Button";
+// import Routing from "./Pages/Routing";
 
 function App() {
   // const handleClick = (data) => {
@@ -19,8 +20,10 @@ function App() {
   // }
 
   return (
-    <div className="App">
-      <Routing />
+    <div>
+      <ShoppingCart />
+
+      {/* <Routing /> */}
 
       {/* <h1>{state}</h1>
 
