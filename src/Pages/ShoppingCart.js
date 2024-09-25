@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ShoppingCart.css";
 import img1 from "../assets/images/img1.jpg";
 import img2 from "../assets/images/img2.webp";
 import img3 from "../assets/images/img3.jpg";
 import img4 from "../assets/images/img4.jpg";
+import ProductCard from "../Components/ProductCard";
+import CartItems from "../Components/CartItems";
 
 function ShoppingCart() {
   const datas = [
@@ -63,7 +65,37 @@ function ShoppingCart() {
       image: img4,
       isStock: true,
     },
+    {
+      id: 8,
+      name: "Hifi",
+      price: 7000,
+      desc: "Some quick example text to build on the card title",
+      image: img2,
+      isStock: true,
+    },
+    {
+      id: 9,
+      name: "experia",
+      price: 12000,
+      desc: "Some quick example text to build on the card title",
+      image: img3,
+      isStock: true,
+    },
   ];
+
+  const [cartItems, setCartItems] = useState([]);
+  const [total, setTotal] = useState(0);
+
+  const handleAddtoCart = (item) => {
+    setCartItems([...cartItems, item]);
+    setTotal(total + item.price);
+  };
+
+  const handleRemoveFromCart = (item) => {
+    const filteredItems = cartItems.filter((cItem) => cItem.id != item.id);
+    setCartItems(filteredItems);
+    setTotal(total - item.price);
+  };
 
   return (
     <div className="container-fluid mainBox">
@@ -72,25 +104,28 @@ function ShoppingCart() {
           <div className="row p-3 d-flex gap-4">
             {datas.map((product) => {
               return (
-                <div className="card" style={{ width: "18rem" }}>
-                  <img src={product.image} className="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">{product.name}</h5>
-                    <h6 className="card-title">{product.price}</h6>
-                    <p className="card-text">{product.desc}</p>
-                    <p>
-                      {product.isStock === true ? "-inStock" : "-out of stock"}
-                    </p>
-                    <button className="btn btn-primary" disabled={!product.isStock === true ? true : false}>
-                      Add to cart
-                    </button>
-                  </div>
-                </div>
+                <ProductCard
+                  product={product}
+                  handleAddtoCart={handleAddtoCart}
+                />
               );
             })}
           </div>
         </div>
-        <div className="col-2 right">right</div>
+        <div className="col-2 right">
+          <ol class="list-group list-group-numbered">
+            <h2>Count: {cartItems.length}</h2>
+            {cartItems.map((item) => {
+              return (
+                <CartItems
+                  item={item}
+                  handleRemoveFromCart={handleRemoveFromCart}
+                />
+              );
+            })}
+            <h2>Total: {total}</h2>
+          </ol>
+        </div>
       </div>
     </div>
   );
