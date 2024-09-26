@@ -100,7 +100,7 @@ function ShoppingCart() {
   return (
     <div className="container-fluid mainBox">
       <div className="row">
-        <div className="col-10 left">
+        <div className="col-10">
           <div className="row p-3 d-flex gap-4">
             {datas.map((product) => {
               return (
@@ -112,7 +112,7 @@ function ShoppingCart() {
             })}
           </div>
         </div>
-        <div className="col-2 right">
+        <div className="col-2">
           <ol class="list-group list-group-numbered">
             <h2>Count: {cartItems.length}</h2>
             {cartItems.map((item) => {

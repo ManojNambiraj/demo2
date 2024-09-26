@@ -1,6 +1,7 @@
 // import { useState } from "react";
 import "./App.css";
-import ShoppingCart from "./Pages/ShoppingCart";
+// import ShoppingCart from "./Pages/ShoppingCart";
+import ShoppingCartUserReducer from "./Pages/ShoppingCartUserReducer";
 // import Button from "./Button";
 // import Routing from "./Pages/Routing";
 
@@ -21,7 +22,9 @@ function App() {
 
   return (
     <div>
-      <ShoppingCart />
+      <ShoppingCartUserReducer />
+
+      {/* <ShoppingCart /> */}
 
       {/* <Routing /> */}
 
