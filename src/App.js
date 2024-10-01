@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import "./App.css";
+import CRUD_App from "./Pages/CRUD_App";
 // import ShoppingCart from "./Pages/ShoppingCart";
 import ShoppingCartUserReducer from "./Pages/ShoppingCartUserReducer";
 // import Button from "./Button";
@@ -22,7 +23,9 @@ function App() {
 
   return (
     <div>
-      <ShoppingCartUserReducer />
+      <CRUD_App />
+               
+      {/* <ShoppingCartUserReducer /> */}
 
       {/* <ShoppingCart /> */}
 
