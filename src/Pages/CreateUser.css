@@ -1,0 +1,15 @@
+.user_form{
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_form > form{
+    width: 40%;
+
+    border: 2px solid black;
+    border-radius: 10%;
+    padding: 2%;
+}
